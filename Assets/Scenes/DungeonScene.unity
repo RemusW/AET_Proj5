@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 351569357}
   - component: {fileID: 351569356}
   - component: {fileID: 351569355}
+  - component: {fileID: 351569358}
   m_Layer: 0
   m_Name: Player-Amy
   m_TagString: Untagged
@@ -225,6 +226,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &351569358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351569354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ce2a3c38b0fa841b95826e041a903c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 351569354}
+  playerAnimator: {fileID: 351569355}
+  spd: 5
 --- !u!1 &1698027542
 GameObject:
   m_ObjectHideFlags: 0
