@@ -6,6 +6,7 @@ public class CameraZoom : MonoBehaviour
 {
     public Transform target;
     public float Speed;
+    public float zoomScale = 0.6f;
     private bool zoomActive = true;
     private Camera cam;
     // stores the positions of the bounding boxes we have are in
@@ -34,7 +35,7 @@ public class CameraZoom : MonoBehaviour
                 if(q[i].localScale.x > q[largestIndex].localScale.x)
                     largestIndex = i;
             }
-            cam.orthographicSize = 0.5f * q[largestIndex].localScale.x;
+            cam.orthographicSize = zoomScale * q[largestIndex].localScale.x;
             // cam.transform.position = Vector3.Lerp(cam.transform.position, target.position.y, Speed);
         }
         // if there are no triggers, track the player
