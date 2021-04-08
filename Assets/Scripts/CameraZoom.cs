@@ -25,7 +25,7 @@ public class CameraZoom : MonoBehaviour
         if (zoomActive)
         {
             // cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, 3, Speed);
-            cam.orthographicSize = 3;
+            cam.orthographicSize = 5;
             // cam.transform.position = transform.position;
         }
         else
