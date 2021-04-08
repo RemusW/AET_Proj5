@@ -22,10 +22,58 @@ public class PlayerController : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal") * movementSpd;
         vertical = Input.GetAxisRaw("Vertical") * movementSpd;
+
+        if (Input.GetButtonDown("Horizontal"))
+        {
+            if (horizontal > 0)
+            {
+                playerAnimator.SetFloat("RightSpd", horizontal);
+                //transform.position = transform.position + new Vector3(movementSpd, 0, 0);
+                //transform.Translate(movementSpd, 0, 0);
+            }
+            else
+            {
+                playerAnimator.SetFloat("LeftSpd", horizontal * (-movementSpd));
+                //transform.position = transform.position + new Vector3(-movementSpd, 0, 0);
+                //transform.Translate(-movementSpd, 0, 0);
+            }
+        }
+
+        if (Input.GetButtonUp("Horizontal"))
+        {
+            playerAnimator.SetFloat("RightSpd", 0);
+            playerAnimator.SetFloat("LeftSpd", 0);
+        }
+
+        if (Input.GetButtonDown("Vertical"))
+        {
+            if (vertical > 0)
+            {
+                playerAnimator.SetFloat("UpSpd", vertical);
+                //transform.position = transform.position + new Vector3(0, movementSpd, 0);
+                //transform.Translate(0, movementSpd, 0);
+            }
+            else
+            {
+                playerAnimator.SetFloat("DownSpd", vertical * (-movementSpd));
+                //transform.position = transform.position + new Vector3(0, -movementSpd, 0);
+                //transform.Translate(0, -movementSpd, 0);
+
+            }
+        }
+
+        if (Input.GetButtonUp("Vertical"))
+        {
+            playerAnimator.SetFloat("UpSpd", 0);
+            playerAnimator.SetFloat("DownSpd", 0);
+        }
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         rb.velocity = new Vector2(horizontal, vertical);
+
+        
     }
 
     void OnTriggerEnter2D(Collider2D col)

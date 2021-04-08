@@ -734,6 +734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 965850384}
   Speed: 0
+  zoomScale: 0.6
 --- !u!1 &1726996557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,7 +1101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6690098464611563439, guid: adcbd3982f811ae449fc5a8cc442e725, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.32
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6690098464611563439, guid: adcbd3982f811ae449fc5a8cc442e725, type: 3}
       propertyPath: m_LocalPosition.z
