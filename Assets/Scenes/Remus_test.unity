@@ -577,7 +577,7 @@ TilemapCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726996557}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -848,7 +848,7 @@ MonoBehaviour:
   wallMap: {fileID: 413610445}
   addMap: {fileID: 1424236126}
   player: {fileID: 6690098464611563432, guid: adcbd3982f811ae449fc5a8cc442e725, type: 3}
-  deviationRate: 10
+  deviationRate: 20
   roomRate: 5
   maxRouteLength: 50
   maxRoutes: 20
