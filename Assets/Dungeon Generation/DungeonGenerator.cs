@@ -16,6 +16,10 @@ public class DungeonGenerator : MonoBehaviour
     [SerializeField]
     private Tile botWallTile;
     [SerializeField]
+    private GameObject potTile;
+    [SerializeField]
+    private GameObject chestTile;
+    [SerializeField]
     private Tile treasureTile;
     [SerializeField]
     private Tile bossTile;
@@ -69,6 +73,9 @@ public class DungeonGenerator : MonoBehaviour
                 TileBase tileAt = groundMap.GetTile(pos);
                 if (tileAt != null && Random.Range(1,100) < 2 && tileAt.name != "bossBackground") {
                     addMap.SetTile(pos, treasureTile);
+                }
+                if (tileAt != null && Random.Range(1,100) < 2) {
+                    Instantiate(potTile, pos, Quaternion.identity);
                 }
             }
         }
@@ -186,7 +193,9 @@ public class DungeonGenerator : MonoBehaviour
             }
         }
         if(radius != 1) {
+            Vector3Int tilePos = new Vector3Int(x+Random.Range(0,radius-1), y+Random.Range(0,radius-1), 0);
             createBound(x, y, radius*2.5f);
+            Instantiate(chestTile, tilePos, Quaternion.identity);
         }
     }
 

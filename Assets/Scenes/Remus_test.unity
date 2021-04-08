@@ -1038,6 +1038,8 @@ MonoBehaviour:
   pitTile: {fileID: 11400000, guid: d9f98adac48e02c4ca93094b79d999d5, type: 2}
   topWallTile: {fileID: 11400000, guid: 07e731826059b264fa55dd97335be51b, type: 2}
   botWallTile: {fileID: 11400000, guid: 2f7bf868b7625964f99d392577b74060, type: 2}
+  potTile: {fileID: 1208099736938186, guid: bff18508c0a59f948ac193210aa13f92, type: 3}
+  chestTile: {fileID: 1375488013871096, guid: 38d22e1553bfb7943b9544b849dee0dd, type: 3}
   treasureTile: {fileID: 11400000, guid: 0c772ce0a07ae7b4d90ff2ddc597228a, type: 2}
   bossTile: {fileID: 11400000, guid: 22c99bc047967e04896bef12bd77e11c, type: 2}
   bossBackgroundTile: {fileID: 11400000, guid: f7b16f67efcf6e3499ff361d7bfba613, type: 2}
@@ -1048,7 +1050,7 @@ MonoBehaviour:
   player: {fileID: 6690098464611563432, guid: adcbd3982f811ae449fc5a8cc442e725, type: 3}
   deviationRate: 10
   roomRate: 5
-  maxRouteLength: 30
+  maxRouteLength: 50
   maxRoutes: 20
 --- !u!4 &2005841157
 Transform:
