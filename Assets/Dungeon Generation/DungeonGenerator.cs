@@ -42,6 +42,7 @@ public class DungeonGenerator : MonoBehaviour
     
 
     private int routeCount = 0;
+    private int id = 0;
 
     private void Start() {
         bossBackgroundTile.name = "bossBackground";
@@ -162,11 +163,17 @@ public class DungeonGenerator : MonoBehaviour
                     GenerateSquare(x, y, roomSize);
                 }
             }
-            if (!bossExist) {
-                Debug.Log("Generating room");
-                bossExist = true;
-                GenerateBossRoom(x, y);
+        }
+        if (!bossExist) {
+            bossExist = true;
+            int xOffset = x - previousPos.x; //0
+            int yOffset = y - previousPos.y; //3
+            for(int i=1; i<15; ++i) {
+                x = previousPos.x + xOffset*i;
+                y = previousPos.y + yOffset*i;
+                GenerateSquare(x, y, 1);
             }
+            GenerateBossRoom(x, y);
         }
     }
 
@@ -174,8 +181,12 @@ public class DungeonGenerator : MonoBehaviour
         for (int tileX = x - radius; tileX <= x + radius; tileX++) {
             for (int tileY = y - radius; tileY <= y + radius; tileY++) {
                 Vector3Int tilePos = new Vector3Int(tileX, tileY, 0);
-                groundMap.SetTile(tilePos, groundTile);
+                if(groundMap.GetTile(tilePos) == null)
+                    groundMap.SetTile(tilePos, groundTile);
             }
+        }
+        if(radius != 1) {
+            createBound(x, y, radius*2.5f);
         }
     }
 
@@ -189,5 +200,18 @@ public class DungeonGenerator : MonoBehaviour
         }
         Vector3Int centerPos = new Vector3Int(x, y, 0);
         addMap.SetTile(centerPos, bossTile);
+        createBound(x, y, radius*2.5f);
+    }
+
+    private void createBound(int x, int y, float radius) {
+        string name = "box" + id;
+        GameObject box = new GameObject(name, typeof(BoxCollider2D));
+        BoxCollider2D bc = box.GetComponent<BoxCollider2D>();
+        // bc.size = new Vector2(x, y);
+        bc.isTrigger = true;
+        box.transform.localScale = new Vector3(radius, radius, 1);
+        box.transform.position = new Vector3(x, y, 0);
+        box.transform.parent = this.gameObject.transform;
+        ++id;
     }
 }

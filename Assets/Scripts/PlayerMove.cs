@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerMove : MonoBehaviour
 {
     public GameObject player;
     public Animator playerAnimator;
-    public GameObject cam;
 
     private Rigidbody2D rb;
     private float horizontal;
@@ -26,17 +25,5 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate() {
         rb.velocity = new Vector2(horizontal, vertical);
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        // Debug.Log("GameObject1 collided with " + col.name);
-        cam.GetComponent<CameraZoom>().updateNumTriggers(1, col.transform);
-    }
-
-    void OnTriggerExit2D(Collider2D col)
-    {
-        // Debug.Log("GameObject1 collided with " + col.name);
-        cam.GetComponent<CameraZoom>().updateNumTriggers(-1, col.transform);
     }
 }
