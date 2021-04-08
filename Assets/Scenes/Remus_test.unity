@@ -1041,7 +1041,7 @@ MonoBehaviour:
   potTile: {fileID: 1208099736938186, guid: bff18508c0a59f948ac193210aa13f92, type: 3}
   chestTile: {fileID: 1375488013871096, guid: 38d22e1553bfb7943b9544b849dee0dd, type: 3}
   treasureTile: {fileID: 11400000, guid: 0c772ce0a07ae7b4d90ff2ddc597228a, type: 2}
-  bossTile: {fileID: 11400000, guid: 22c99bc047967e04896bef12bd77e11c, type: 2}
+  bossTile: {fileID: 11400000, guid: 3d0a4edd17635a14a8d086d4165c8697, type: 2}
   bossBackgroundTile: {fileID: 11400000, guid: f7b16f67efcf6e3499ff361d7bfba613, type: 2}
   groundMap: {fileID: 1726996561}
   pitMap: {fileID: 1865753764}
