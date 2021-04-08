@@ -20,13 +20,13 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Horizontal"))
         {
-            if (horizontal > 0)
+            while (horizontal > 0)
             {
                 playerAnimator.SetFloat("RightSpd", horizontal);
                 //transform.position = transform.position + new Vector3(movementSpd, 0, 0);
                 transform.Translate(movementSpd, 0, 0);
             }
-            else
+            while (horizontal < 0)
             {
                 playerAnimator.SetFloat("LeftSpd", horizontal * (-movementSpd));
                 //transform.position = transform.position + new Vector3(-movementSpd, 0, 0);
@@ -40,15 +40,16 @@ public class PlayerController : MonoBehaviour
             playerAnimator.SetFloat("LeftSpd", 0);
         }
 
+
         if (Input.GetButtonDown("Vertical"))
         {
-            if (vertical > 0)
+            while (vertical > 0)
             {
                 playerAnimator.SetFloat("UpSpd", vertical);
                 //transform.position = transform.position + new Vector3(0, movementSpd, 0);
                 transform.Translate(0, movementSpd, 0);
             }
-            else
+            while (vertical < 0)
             {
                 playerAnimator.SetFloat("DownSpd", vertical * (-movementSpd));
                 //transform.position = transform.position + new Vector3(0, -movementSpd, 0);
